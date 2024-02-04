@@ -1,0 +1,299 @@
+
+Basic Specs
+----------------------------------------------------
+Input Size: torch.Size([32, 1, 512, 512])
+
+
+Model Specs: 
+three_layer_conv_network(
+  (conv_1): Sequential(
+    (0): Conv2d(1, 256, kernel_size=(5, 5), stride=(2, 2), padding=(1, 1))
+    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout2d(p=0.2, inplace=False)
+    (4): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (conv_2): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout2d(p=0.2, inplace=False)
+    (4): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (5): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout2d(p=0.2, inplace=False)
+    (8): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (conv_3): Sequential(
+    (0): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout2d(p=0.2, inplace=False)
+    (4): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (5): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): ReLU()
+    (7): Dropout2d(p=0.2, inplace=False)
+    (8): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (dense): Sequential(
+    (0): Linear(in_features=65536, out_features=2048, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.4, inplace=False)
+    (3): Linear(in_features=2048, out_features=1, bias=True)
+  )
+)
+
+
+
+
+
+Training Information
+--------------------------------------------------------------------------------
+Training Begin
+----------------------------------------------------
+There are 3 epochs, and for each epoch, there are 138 batches of training data
+Total Training Steps: 414
+Total Displaying Information: 14
+Optimizer name - AdamW learning rate: 1e-05
+lowest_val_loss started with 1000000000
+
+
+
+Message: 1 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 1 / 3 || Batch: 30 / 414 || Print Cycle: 1 / 14
+Average per-Batch Training Loss: 0.3697 || Average per-Batch Validation Loss: 1.1247
+Average per-Batch Training Accuracy: 83.96% || Average per-Batch Validation Accuracy: 72.01%
+This printing cycle took 0.52 minutes
+
+
+
+Message: 2 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 1 / 3 || Batch: 60 / 414 || Print Cycle: 2 / 14
+Average per-Batch Training Loss: 0.2536 || Average per-Batch Validation Loss: 0.9196
+Average per-Batch Training Accuracy: 87.81% || Average per-Batch Validation Accuracy: 72.27%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 31.41%
+Average per-Batch Validation Loss has decreased by 18.24%
+
+Val Loss decreased from 1000000000.000000 to 0.919553 - Saving the Best Model
+
+
+This printing cycle took 0.46 minutes
+
+
+
+Message: 3 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 1 / 3 || Batch: 90 / 414 || Print Cycle: 3 / 14
+Average per-Batch Training Loss: 0.1770 || Average per-Batch Validation Loss: 0.6234
+Average per-Batch Training Accuracy: 92.40% || Average per-Batch Validation Accuracy: 74.35%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 30.19%
+Average per-Batch Validation Loss has decreased by 32.21%
+
+Val Loss decreased from 0.919553 to 0.623369 - Saving the Best Model
+
+
+This printing cycle took 0.48 minutes
+
+
+
+Message: 4 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 1 / 3 || Batch: 120 / 414 || Print Cycle: 4 / 14
+Average per-Batch Training Loss: 0.2195 || Average per-Batch Validation Loss: 0.2298
+Average per-Batch Training Accuracy: 89.69% || Average per-Batch Validation Accuracy: 89.06%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by -24.04%
+Average per-Batch Validation Loss has decreased by 63.13%
+
+Val Loss decreased from 0.623369 to 0.229840 - Saving the Best Model
+
+
+This printing cycle took 0.46 minutes
+
+
+
+Message: 5 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 2 / 3 || Batch: 150 / 414 || Print Cycle: 5 / 14
+Average per-Batch Training Loss: 0.2034 || Average per-Batch Validation Loss: 0.1837
+Average per-Batch Training Accuracy: 91.04% || Average per-Batch Validation Accuracy: 92.06%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 7.34%
+Average per-Batch Validation Loss has decreased by 20.09%
+
+Val Loss decreased from 0.229840 to 0.183661 - Saving the Best Model
+
+
+This printing cycle took 0.46 minutes
+
+
+
+Message: 6 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 2 / 3 || Batch: 180 / 414 || Print Cycle: 6 / 14
+Average per-Batch Training Loss: 0.1752 || Average per-Batch Validation Loss: 0.3862
+Average per-Batch Training Accuracy: 93.12% || Average per-Batch Validation Accuracy: 84.64%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 13.86%
+Average per-Batch Validation Loss has decreased by -110.25%
+
+This printing cycle took 0.43 minutes
+
+
+
+Message: 7 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 2 / 3 || Batch: 210 / 414 || Print Cycle: 7 / 14
+Average per-Batch Training Loss: 0.1658 || Average per-Batch Validation Loss: 0.1354
+Average per-Batch Training Accuracy: 93.33% || Average per-Batch Validation Accuracy: 95.05%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 5.39%
+Average per-Batch Validation Loss has decreased by 64.94%
+
+Val Loss decreased from 0.183661 to 0.135390 - Saving the Best Model
+
+
+This printing cycle took 0.45 minutes
+
+
+
+Message: 8 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 2 / 3 || Batch: 240 / 414 || Print Cycle: 8 / 14
+Average per-Batch Training Loss: 0.0973 || Average per-Batch Validation Loss: 0.1078
+Average per-Batch Training Accuracy: 96.25% || Average per-Batch Validation Accuracy: 94.79%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 41.30%
+Average per-Batch Validation Loss has decreased by 20.38%
+
+Val Loss decreased from 0.135390 to 0.107798 - Saving the Best Model
+
+
+This printing cycle took 0.45 minutes
+
+
+
+Message: 9 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 2 / 3 || Batch: 270 / 414 || Print Cycle: 9 / 14
+Average per-Batch Training Loss: 0.1293 || Average per-Batch Validation Loss: 0.1418
+Average per-Batch Training Accuracy: 94.69% || Average per-Batch Validation Accuracy: 94.27%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by -32.90%
+Average per-Batch Validation Loss has decreased by -31.58%
+
+This printing cycle took 0.44 minutes
+
+
+
+Message: 10 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 3 / 3 || Batch: 300 / 414 || Print Cycle: 10 / 14
+Average per-Batch Training Loss: 0.1387 || Average per-Batch Validation Loss: 0.1379
+Average per-Batch Training Accuracy: 94.48% || Average per-Batch Validation Accuracy: 94.14%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by -7.26%
+Average per-Batch Validation Loss has decreased by 2.75%
+
+This printing cycle took 0.43 minutes
+
+
+
+Message: 11 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 3 / 3 || Batch: 330 / 414 || Print Cycle: 11 / 14
+Average per-Batch Training Loss: 0.1104 || Average per-Batch Validation Loss: 0.1528
+Average per-Batch Training Accuracy: 95.52% || Average per-Batch Validation Accuracy: 94.14%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 20.45%
+Average per-Batch Validation Loss has decreased by -10.75%
+
+This printing cycle took 0.43 minutes
+
+
+
+Message: 12 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 3 / 3 || Batch: 360 / 414 || Print Cycle: 12 / 14
+Average per-Batch Training Loss: 0.1041 || Average per-Batch Validation Loss: 0.1388
+Average per-Batch Training Accuracy: 96.35% || Average per-Batch Validation Accuracy: 94.14%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by 5.67%
+Average per-Batch Validation Loss has decreased by 9.12%
+
+This printing cycle took 0.42 minutes
+
+
+
+Message: 13 - Progress Summary - 30 batches
+--------------------------------
+Epoch: 3 / 3 || Batch: 390 / 414 || Print Cycle: 13 / 14
+Average per-Batch Training Loss: 0.1056 || Average per-Batch Validation Loss: 0.1169
+Average per-Batch Training Accuracy: 95.73% || Average per-Batch Validation Accuracy: 95.44%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by -1.40%
+Average per-Batch Validation Loss has decreased by 15.82%
+
+This printing cycle took 0.43 minutes
+
+
+
+Message: 14 - Progress Summary - 24 batches
+--------------------------------
+Epoch: 3 / 3 || Batch: 414 / 414 || Print Cycle: 14 / 14
+Average per-Batch Training Loss: 0.1202 || Average per-Batch Validation Loss: 0.1075
+Average per-Batch Training Accuracy: 94.92% || Average per-Batch Validation Accuracy: 95.57%
+
+Model Improvement
+--------------------------------
+Average per-Batch Training Loss has decreased by -13.91%
+Average per-Batch Validation Loss has decreased by 8.01%
+
+Val Loss decreased from 0.107798 to 0.107503 - Saving the Best Model
+
+
+This printing cycle took 0.41 minutes
+
+Saving the Last Model
+
+
+Overall training took 0.1 hours
+--------------------------------------------------------------------------------
+
+
+
+
+
+Testing Information
+--------------------------------------------------------------------------------
+Average per-Batch Test Loss: 0.5567
+Average per-Batch Test Accuracy: 80.16%
